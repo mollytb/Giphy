@@ -25,29 +25,28 @@ $(document).ready(function () {
             for (var i = 0; i < results.length; i++) {
 
                 // Creating a div to hold the comic gif (working)
-                var gifDiv = $("<div class='gif'>");
+                var gifDiv = $("<div class='gif col-6 float-left' style='height: 300px'>");
 
                 // Storing the rating data (working)
                 var rating = results[i].rating;
 
                 // Creating an element to have the rating displayed (working)
-                var pTag = $("<p>").text("Rating: " + rating);
+                var pTag = $("<p class='text-info'>").text("Rating: " + rating);
 
                 // Displaying the rating within the gif div (working)
                 gifDiv.append(pTag);
 
-                // Retrieving the URL for the image (not working)
-                var imgURL = results[i].fixed_height;
+                
 
-                // Creating an element to hold the image (working img tag is there, just no image)
-                var image = $("<img class='col-6 offset-3'>");
+                // Creating an element to hold the image (working)
+                var image = $("<img class='col-12'>");
                 image.attr("src", results[i].images.downsized_still.url);
                 image.attr("data-still", results[i].images.downsized_still.url);
                 image.attr("data-animate", results[i].images.downsized_large.url);
                 image.attr("data-state", "still");
 
                 // Appending the image
-                gifDiv.append(image);
+                gifDiv.prepend(image);
 
                 // Putting the gif above the previous gif (working)
                 $("#gif-view").prepend(gifDiv);
@@ -77,10 +76,9 @@ $(document).ready(function () {
         // for loop through array
         for (var i = 0; i < comedians.length; i++) {
 
-            // Make buttons for each array item 
-            var a = $("<button>");
-            // add class of comic-btn
-            a.addClass("comic-btn");
+            // Make buttons for each array item and add class of comic-btn
+            var a = $("<button class='comic-btn btn-lg'>");
+           
             // add a data-attribute
             a.attr("data-name", comedians[i]);
             // button text
@@ -100,6 +98,8 @@ $(document).ready(function () {
 
         // call renderButtons (working)
         renderButtons();
+        //empty text box
+        
     });
 
     // Adding a click event listener to all elements with a class of "comic-btn" (working)

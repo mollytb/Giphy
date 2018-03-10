@@ -11,21 +11,31 @@
 </head>
 
 <body>
-  <div class="jumbotron text-center">
+  <div class="container">
+  <div class="jumbotron text-center bg-info">
     <h1>Comic Gifs</h1>
   </div>
-  <div class="input-group mb-3">
-    <div class="input-group-prepend col-6 offset-3">
-      <button id="add-comic" for="comic-input" class="btn btn-outline-primary" type="button">Add Comic</button>
+  <div class="input-group mb-3  col-6 offset-3">
+    <div class="input-group-prepend">
+      <button id="add-comic" for="comic-input" class="btn-lg btn-outline-info" type="button">Add Comic</button>
     </div>
-    <input type="text" id="comic-input">
+    <input type="text" id="comic-input" class="btn-outline-info">
   </div>
-  <div id="buttons-view"></div>
-  <div class="container">  
-  <div class="row">
-      <div id="gif-view"></div>
+  </div>
+  <div class="container">
+  <div class "row">
+    <div class="col text-center">
+      <div id="buttons-view"></div>
     </div>
   </div>
+ 
+    <div class="row">
+      <div class="col-12 text-center">
+        <div id="gif-view"></div>
+    </div>
+    </div>
+    </div>
+  
 
 
 </body>
