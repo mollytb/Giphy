@@ -4,7 +4,7 @@ $(document).ready(function () {
 
     //array of comics
     var api = "5Vkyw3IelCYOvYCClhHuJO0k2uxUA3q2"
-    var comedians = ["Tina Fey", "Amy Poehler", "Jerry Seinfeld", "Amy Schumer"];
+    var comedians = ["Tina Fey", "Amy Poehler", "Jerry Seinfeld", "Amy Schumer", "Lily Tomlin","Rhea Butcher"];
     function displayGifInfo() {
 
         // displayGifInfo function re-renders the HTML to display the appropriate content
@@ -21,11 +21,11 @@ $(document).ready(function () {
             console.log(response);
             var results = response.data;
 
-
+            //for loop to create divs with rating info and gif image
             for (var i = 0; i < results.length; i++) {
 
-                // Creating a div to hold the comic gif (working)
-                var gifDiv = $("<div class='gif col-6 float-left' style='height: 300px'>");
+                // Creating a div to hold the info (working)
+                var gifDiv = $("<div class='gif col-4 float-left' style='height: 300px'>");
 
                 // Storing the rating data (working)
                 var rating = results[i].rating;
@@ -77,7 +77,7 @@ $(document).ready(function () {
         for (var i = 0; i < comedians.length; i++) {
 
             // Make buttons for each array item and add class of comic-btn
-            var a = $("<button class='comic-btn btn-lg'>");
+            var a = $("<button class='comic-btn btn-lg btn-info border'>");
            
             // add a data-attribute
             a.attr("data-name", comedians[i]);
@@ -95,10 +95,12 @@ $(document).ready(function () {
 
         // pushing variable made from user input to the array via above variable(working)
         comedians.push(comic);
+        //empty the text box after inputting a new comic (not working)
+        $("#comic-input").val("");
 
         // call renderButtons (working)
         renderButtons();
-        //empty text box
+        
         
     });
 
